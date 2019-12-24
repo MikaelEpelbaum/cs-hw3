@@ -207,29 +207,48 @@ def print_board(board, player):
 
 
 def validate_and_place(board, x, y, orientation, size, is_last, user):
-    placeable = True
     if orientation in 'v':
-        if y >= 0 and x >= 0 and y + size <= N:
-            for index in range(y, y + size):
-                if board[index][x] != ' ':
-                    placeable = False
-        else:
-            placeable = False
-        if placeable:
-            return place_vertical_ship(board, x, y, size, is_last, user)
-        else:
-            return retry(board, size, is_last, user)
+        return place_vertical_ship(board, x, y, size, is_last, user)
     else:
-        if x >= 0 and y >= 0 and x + size <= N:
-            for index in range(x, x + size):
-                if board[y][index] != ' ':
-                    placeable = False
-        else:
-            placeable = False
-        if placeable:
-            return place_horizontal_ship(board, x, y, size, is_last, user)
-        else:
-            return retry(board, size, is_last, user)
+        return place_horizontal_ship(board, x, y, size, is_last, user)
+
+
+def place_vertical_ship(board, x, y, size, is_last, user):
+    placeable = True
+    if y >= 0 and x >= 0 and y + size <= N:
+        for index in range(y, y + size):
+            if board[index][x] != ' ':
+                placeable = False
+    else:
+        placeable = False
+    if placeable:
+        for index in range(y, y + size):
+            board[index][x] = '*'
+        if (not is_last) and user == USER:
+            print('Your current board:')
+            print_board(board, user)
+        return board
+    else:
+        return retry(board, size, is_last, user)
+
+
+def place_horizontal_ship(board, x, y, size, is_last, user):
+    placeable = True
+    if x >= 0 and y >= 0 and x + size <= N:
+        for index in range(x, x + size):
+            if board[y][index] != ' ':
+                placeable = False
+    else:
+        placeable = False
+    if placeable:
+        for index in range(x, x + size):
+            board[y][index] = '*'
+        if (not is_last) and user == USER:
+            print('Your current board:')
+            print_board(board, user)
+        return board
+    else:
+        return retry(board, size, is_last, user)
 
 
 def retry(board, size, is_last, user):
@@ -237,24 +256,6 @@ def retry(board, size, is_last, user):
         return set_machine_board(board, size, is_last)
     else:
         return coordinates_retry(board, size, is_last)
-
-
-def place_vertical_ship(board, x, y, size, is_last, user):
-    for index in range(y, y + size):
-        board[index][x] = '*'
-    if (not is_last) and user == USER:
-        print('Your current board:')
-        print_board(board, user)
-    return board
-
-
-def place_horizontal_ship(board, x, y, size, is_last, user):
-    for index in range(x, x + size):
-        board[y][index] = '*'
-    if (not is_last) and user == USER:
-            print('Your current board:')
-            print_board(board, user)
-    return board
 
 
 def coordinates_retry(board, size, is_last):

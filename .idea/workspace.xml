@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ebd6e29-a521-49d5-8f6c-f1127cdd609a" name="Default" comment="" />
+    <list default="true" id="5ebd6e29-a521-49d5-8f6c-f1127cdd609a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/hw3q1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw3q1.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +19,11 @@
       <file leaf-file-name="hw3q1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw3q1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3109">
-              <caret line="154" column="8" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="8" />
+            <state relative-caret-position="-1124">
+              <caret line="231" column="54" lean-forward="true" selection-start-line="231" selection-start-column="54" selection-end-line="231" selection-end-column="54" />
+              <folding>
+                <element signature="e#5521#5593#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,6 +59,9 @@
       <replace>SHIPS</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -68,6 +76,7 @@
     <option name="width" value="984" />
     <option name="height" value="1044" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -170,11 +179,11 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.185567" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.7010309" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.36254296" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.58762884" />
       <window_info id="Favorites" order="2" sideWeight="0.50342464" side_tool="true" weight="0.12099922" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39518902" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -193,7 +202,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hw3q1.py</url>
-          <line>303</line>
+          <line>332</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
@@ -256,6 +265,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6534">
           <caret line="297" selection-start-line="297" selection-end-line="297" />
+          <folding>
+            <element signature="e#5521#5593#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -263,6 +275,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2552">
           <caret line="116" column="16" lean-forward="true" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
+          <folding>
+            <element signature="e#5521#5593#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -270,6 +285,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3894">
           <caret line="221" selection-start-line="221" selection-end-line="221" />
+          <folding>
+            <element signature="e#5521#5593#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -277,6 +295,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3894">
           <caret line="221" selection-start-line="221" selection-end-line="221" />
+          <folding>
+            <element signature="e#5521#5593#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -303,8 +324,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hw3q1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3109">
-          <caret line="154" column="8" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="8" />
+        <state relative-caret-position="-1124">
+          <caret line="231" column="54" lean-forward="true" selection-start-line="231" selection-start-column="54" selection-end-line="231" selection-end-column="54" />
+          <folding>
+            <element signature="e#5521#5593#0" />
+          </folding>
         </state>
       </provider>
     </entry>
