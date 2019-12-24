@@ -101,18 +101,12 @@ def print_winner_message(player):
         print('Game over! The computer won the fight :(')
 
 
-def check_move(board, x, y):
-    '''
-    Given a following table and coordinates,
-    check whether the move is legal.
-    :param board:
-    :param x: The column number.
-    :param y: The row number.
-    :return: True if the move is valid, else False.
-    '''
-    if board[x][y] == ' ':
-        return True
-    return False
+def check_move(target_b, x, y):
+    if target_b[x][y] == ' ':
+        target_b[x][y] = MISS_MARK
+    if target_b[x][y] == '*':
+        target_b[x][y] = HIT_MARK
+    return  target_b
 
 
 def get_valid_computer_move(board):
@@ -148,8 +142,7 @@ def board_generator():
     return [[' ' for x in range(N)] for y in range(N)]
 
 
-def initialize_and_set_board(player, seed=False):
-    random.seed(seed)
+def initialize_and_set_board(player):
     board = board_generator()
     if player == USER:
         print_board(board, player)
@@ -206,11 +199,11 @@ def print_board(board, player):
     print()
 
 
-def validate_and_place(board, x, y, orientation, size, is_last, user):
-    if orientation in 'v':
+def validate_and_place(board, x, y, side, size, is_last, user):
+    if side in 'v':
         return place_vertical_ship(board, x, y, size, is_last, user)
     else:
-        return place_horizontal_ship(board, x, y, size, is_last, user)
+        return place_side_ship(board, x, y, size, is_last, user)
 
 
 def place_vertical_ship(board, x, y, size, is_last, user):
@@ -232,7 +225,7 @@ def place_vertical_ship(board, x, y, size, is_last, user):
         return retry(board, size, is_last, user)
 
 
-def place_horizontal_ship(board, x, y, size, is_last, user):
+def place_side_ship(board, x, y, size, is_last, user):
     placeable = True
     if x >= 0 and y >= 0 and x + size <= N:
         for index in range(x, x + size):
@@ -269,46 +262,56 @@ def coordinates_retry(board, size, is_last):
     return validate_and_place(board, x, y, side, size, is_last, USER)
 
 
-def game_manager(user_b, computer_b, player):
-    if True:
-        if player % 2 == 0:
-            print('Your following table:')
-            play_turn(user_b, USER)
-            game_manager(user_b, computer_b, 1)
-        else:
-            print("The computer's following table:")
-            play_turn(computer_b, USER)
-            game_manager(user_b, computer_b, 2)
+def game_manager(boards, user_b, computer_b, player):
+    if player % 2 == 0:
+        computer_b = play_turn(boards[1], USER)
+    else:
+        user_b = play_turn(boards[0], COMPUTER)
+    game_manager(boards, user_b, computer_b, player + 1)
 
 
-def play_turn(board, player):
-    '''
-    :param board: NxN matrix representing the following table.
-    :param player: The current player.
-    :return: True whether game is still on, otherwise False.
-    '''
-    print_board(board, player)
+def play_turn(target_b, player, seed = -1):
+    loc = ''
     if player == USER:
         print("It's your turn!")
-        loc = str(input()).split(',')
-        if check_move(board, int(loc[0]), int(loc[1])):
-            board[loc[0]][loc[1]] = 'X'
+        print('Enter location for attack:')
+        loc = str(input())[::-1].split(',')
+        print('Your following table:')
+    else:
+        print("The computer's following table:")
+        loc = computer_attack_generator(seed)
+    target_b = check_move(target_b, int(loc[0]), int(loc[1]))
+    print_board(target_b, player + 1)
+    return target_b
+
+
+def computer_attack_generator(seed):
+    random.seed(seed)
+    return [random.randint(0, N-1), random.randint(0, N-1)]
+
+
+def first_part():
+    print('Your current board:')
+    user_board = initialize_and_set_board(USER)
+    print('Your following table:')
+    computer_board = initialize_and_set_board(COMPUTER)
+    print_board(computer_board, USER)
+    print("The computer's following table:")
+    print_board(user_board, USER)
+    return [user_board, computer_board]
 
 
 def main():
     print('Welcome to Battleship!')
     print('Please enter seed:')
     seed = int(input())
-    print('Your current board:')
-    user_board = initialize_and_set_board(USER)
-    print('Your following table:')
-    computer_board = initialize_and_set_board(COMPUTER, seed)
-    print_board(computer_board, COMPUTER)
-    print("The computer's following table:")
-    print_board(user_board, USER)
-    # Initialize boards
+    random.seed(seed)
+
+    # boards initialisation
+    boards = first_part()
     user_following_table = board_generator()
-    game_manager(user_following_table, user_board, 2)
+    comp_following_table = board_generator()
+    game_manager(boards, user_following_table, comp_following_table, 2)
 
 
 if __name__ == '__main__':
