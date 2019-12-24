@@ -270,7 +270,7 @@ def game_manager(boards, user_b, computer_b, player):
     game_manager(boards, user_b, computer_b, player + 1)
 
 
-def play_turn(target_b, player, seed = -1):
+def play_turn(target_b, player):
     loc = ''
     if player == USER:
         print("It's your turn!")
@@ -279,14 +279,13 @@ def play_turn(target_b, player, seed = -1):
         print('Your following table:')
     else:
         print("The computer's following table:")
-        loc = computer_attack_generator(seed)
+        loc = computer_attack_generator()
     target_b = check_move(target_b, int(loc[0]), int(loc[1]))
     print_board(target_b, player + 1)
     return target_b
 
 
-def computer_attack_generator(seed):
-    random.seed(seed)
+def computer_attack_generator():
     return [random.randint(0, N-1), random.randint(0, N-1)]
 
 
