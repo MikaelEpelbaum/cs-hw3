@@ -177,8 +177,8 @@ def set_user_board(board, size, is_last):
 
 
 def set_machine_board(board, size, is_last):
-    x = int(random.randint(0, N-1))
     y = int(random.randint(0, N-1))
+    x = int(random.randint(0, N-1))
     side = 'h' if int(random.randint(0, 1)) == 0 else 'v'
     if is_last:
         return validate_and_place(board, x, y, side, size, True, COMPUTER)
@@ -201,54 +201,114 @@ def print_board(board, player):
 
 def validate_and_place(board, x, y, side, size, is_last, user):
     if side in 'v':
-        return place_vertical_ship(board, x, y, size, is_last, user)
+        if vertical_surroundings_validation(board, x, y, size):
+            return place_vertical_ship(board, x, y, size, is_last, user)
+        else:
+            if user == USER:
+                return coordinates_retry(board, size, is_last)
+            else:
+                return set_machine_board(board, size, is_last)
+
     else:
-        return place_side_ship(board, x, y, size, is_last, user)
+        if horizontal_surroundings_validation(board, x, y, size):
+            return place_side_ship(board, x, y, size, is_last, user)
+        else:
+            if user == USER:
+                return coordinates_retry(board, size, is_last)
+            else:
+                return set_machine_board(board, size, is_last)
+
+
+def vertical_surroundings_validation(board, x, y, size):
+    if y + size > N or y < 0:
+        return False
+    if x == 0:
+        if y == 0 and y + size == N:
+            return check_rectangle(board, x, y, x+1, y + size)
+        elif y == 0 and y + size + 1 <= N:
+            return check_rectangle(board, x, y, x+1, y + size+1)
+        elif y > 0 and y + size == N:
+            return check_rectangle(board, x, y-1, x+1, y + size)
+        elif y > 0 and y + size + 1 <= N:
+            return check_rectangle(board, x, y-1, x+1, y + size+1)
+    elif x == N:
+        if y == 0 and y + size == N:
+            return check_rectangle(board, x-1, y, x, y + size)
+        elif y == 0 and y + size + 1 <= N:
+            return check_rectangle(board, x-1, y, x, y + size+1)
+        elif y > 0 and y + size == N:
+            return check_rectangle(board, x-1, y-1, x, y + size)
+        elif y > 0 and y + size + 1 <= N:
+            return check_rectangle(board, x-1, y-1, x, y + size+1)
+    else:
+        if y == 0 and y + size == N:
+            return check_rectangle(board, x-1, y, x+1, y + size)
+        elif y == 0 and y + size + 1 <= N:
+            return check_rectangle(board, x-1, y, x+1, y + size)
+        elif y > 0 and y + size == N:
+            return check_rectangle(board, x-1, y-1, x+1, y + size)
+        elif y > 0 and y + size + 1 <= N:
+            return check_rectangle(board, x-1, y-1, x+1, y + size)
+    return False
+
+
+def horizontal_surroundings_validation(board, x, y, size):
+    if x + size > N or x < 0:
+        return False
+    if y == 0:
+        if x == 0 and x + size == N:
+            return check_rectangle(board, x, y, x+size, y+1)
+        elif x == 0 and x + size + 1 <= N:
+            return check_rectangle(board, x, y, x+size+1, y+1)
+        elif x > 0 and x + size == N:
+            return check_rectangle(board, x-1, y, x+size, y+1)
+        elif x > 0 and x + size + 1 <= N:
+            return check_rectangle(board, x-1, y, x+size+1, y+1)
+    elif y == N:
+        if x == 0 and x + size == N:
+            return check_rectangle(board, x, y, x+size, y+1)
+        elif x == 0 and x + size + 1 <= N:
+            return check_rectangle(board, x, y, x+size+1, y+1)
+        elif x > 0 and x + size == N:
+            return check_rectangle(board, x-1, y, x+size, y+1)
+        elif x > 0 and x + size + 1 <= N:
+            return check_rectangle(board, x-1, y, x+size+1, y+1)
+    else:
+        if x == 0 and x + size == N:
+            return check_rectangle(board, x, y-1, x+size, y+1)
+        elif x == 0 and x + size + 1 <= N:
+            return check_rectangle(board, x, y-1, x+size+1, y+1)
+        elif x > 0 and x + size == N:
+            return check_rectangle(board, x-1, y-1, x+size, y+1)
+        elif x > 0 and x + size + 1 <= N:
+            return check_rectangle(board, x-1, y-1, x+size+1, y+1)
+    return False
+
+
+def check_rectangle(board, x1, y1, x2, y2):
+    for i in range(x1, x2):
+        for j in range(y1, y2):
+            if board[j][i] != ' ':
+                return False
+    return True
 
 
 def place_vertical_ship(board, x, y, size, is_last, user):
-    placeable = True
-    if y >= 0 and x >= 0 and y + size <= N:
-        for index in range(y, y + size):
-            if board[index][x] != ' ':
-                placeable = False
-    else:
-        placeable = False
-    if placeable:
-        for index in range(y, y + size):
-            board[index][x] = '*'
-        if (not is_last) and user == USER:
-            print('Your current board:')
-            print_board(board, user)
-        return board
-    else:
-        return retry(board, size, is_last, user)
+    for index in range(y, y + size):
+        board[index][x] = '*'
+    if (not is_last) and user == USER:
+        print('Your current board:')
+        print_board(board, user)
+    return board
 
 
 def place_side_ship(board, x, y, size, is_last, user):
-    placeable = True
-    if x >= 0 and y >= 0 and x + size <= N:
-        for index in range(x, x + size):
-            if board[y][index] != ' ':
-                placeable = False
-    else:
-        placeable = False
-    if placeable:
-        for index in range(x, x + size):
-            board[y][index] = '*'
-        if (not is_last) and user == USER:
-            print('Your current board:')
-            print_board(board, user)
-        return board
-    else:
-        return retry(board, size, is_last, user)
-
-
-def retry(board, size, is_last, user):
-    if user == COMPUTER:
-        return set_machine_board(board, size, is_last)
-    else:
-        return coordinates_retry(board, size, is_last)
+    for index in range(x, x + size):
+        board[y][index] = '*'
+    if (not is_last) and user == USER:
+        print('Your current board:')
+        print_board(board, user)
+    return board
 
 
 def coordinates_retry(board, size, is_last):
