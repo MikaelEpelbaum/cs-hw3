@@ -16,126 +16,11 @@ MISS_CODE = 1
 INVALID_CODE = 2
 
 
-def check_if_top_vertical(board, x, y):
-    '''
-    Check if board[y][x] is the top vertical part of the battleship
-    :param board: a following table
-    :param x: column coordinate
-    :param y: row coordinate
-    :return: True if the location is top vertical, else False.
-    '''
-    for j in range(x - 1, max(x - MAX_SIZE, -1), -1):
-        if board[y][j] not in [BATTLESHIP_MARK, HIT_MARK]:
-            return True
-        if board[y][j] == BATTLESHIP_MARK:
-            return False
-
-    return True
-
-
-def check_if_top_horizontal(board, x, y):
-    '''
-    Check if board[y][x] is the top horizontal part of the battleship.
-    :param board: a following table
-    :param x: column coordinate
-    :param y: row coordinate
-    :return: True if the location is top horizontal, else False.
-    '''
-    for i in range(y - 1, max(y - MAX_SIZE, -1), -1):
-        if board[i][x] not in [BATTLESHIP_MARK, HIT_MARK]:
-            return True
-        if board[i][x] == BATTLESHIP_MARK:
-            return False
-
-    return True
-
-
-def count_battleships(board):
-    '''
-    Counts the number of battleships left on the table.
-    :param board: a following table
-    :return: The number of battleships.
-    '''
-    counter = 0
-    num_rows = num_cols = N
-    for i in range(num_rows):
-        for j in range(num_cols):
-            if board[i][j] != BATTLESHIP_MARK:
-                continue
-            if check_if_top_horizontal(board, j,
-                                       i) and check_if_top_vertical(board,
-                                                                    j, i):
-                counter += 1
-    return counter
-
-
-def print_game_status(user_board, computer_board):
-    '''
-    Prints the game status.
-    :param user_board: the users board
-    :param computer_board: the computers board
-    :return:
-    '''
-    pass
-
-
-def print_drown_battleship_message(player, count):
-    '''
-    Prints a message when a battleship has drown.
-    :param player: the current player
-    :param count: the count of battleships
-    :return:
-    '''
-    pass
-
-
-def print_winner_message(player):
-    '''
-    Prints a message when the game is over
-    :param player: the winner player
-    :return:
-    '''
-    if player == USER:
-        print('Congrats! You are the winner :)')
-    else:
-        print('Game over! The computer won the fight :(')
-
-
 def check_move(target_b, x, y):
     if target_b[x][y] == ' ':
-        target_b[x][y] = MISS_MARK
+        return False
     if target_b[x][y] == '*':
-        target_b[x][y] = HIT_MARK
-    return  target_b
-
-
-def get_valid_computer_move(board):
-    '''
-    Randomize a valid move.
-    :param board: The computer's following table.
-    :return: a valid move
-    '''
-    pass
-
-
-def get_valid_user_move(board):
-    '''
-    Scans a valid move from the user.
-    :param board: The user's following table.
-    :return: a valid move.
-    '''
-    pass
-
-
-def attack_location(board, player):
-    '''
-    Given a player and its following table,
-    get valid location and attack it.
-    :param board: The players following table.
-    :param player: The current player.
-    :return: Whether the attack was hit or miss.
-    '''
-    pass
+        return True
 
 
 def board_generator():
@@ -314,13 +199,22 @@ def play_turn(target_b, player):
     else:
         print("The computer's following table:")
         loc = computer_attack_generator()
-    target_b = check_move(target_b, int(loc[0]), int(loc[1]))
+    if check_move(target_b, int(loc[0]), int(loc[1])):
+        target_b[int(loc[0])][int(loc[1])] = HIT_MARK
+        state_update(target_b, player, int(loc[0]), int(loc[1]))
+    else:
+        target_b[int(loc[0])][int(loc[1])] = MISS_MARK
     print_board(target_b, player + 1)
     return target_b
 
 
 def computer_attack_generator():
     return [random.randint(0, N-1), random.randint(0, N-1)][::-1]
+
+
+def state_update(board, player, x, y):
+    pass
+
 
 
 def first_part():
@@ -342,9 +236,9 @@ def main():
 
     # boards initialisation
     boards = first_part()
-    user_following_table = board_generator()
-    comp_following_table = board_generator()
-    game_manager(boards, user_following_table, comp_following_table, 2)
+    user_play_board = board_generator()
+    comp_play_board = board_generator()
+    game_manager(boards, user_play_board, comp_play_board, 2)
 
 
 if __name__ == '__main__':
