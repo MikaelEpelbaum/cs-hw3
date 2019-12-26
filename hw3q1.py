@@ -177,8 +177,8 @@ def set_user_board(board, size, is_last):
 
 
 def set_machine_board(board, size, is_last):
-    y = int(random.randint(0, N-1))
     x = int(random.randint(0, N-1))
+    y = int(random.randint(0, N-1))
     side = 'h' if int(random.randint(0, 1)) == 0 else 'v'
     if is_last:
         return validate_and_place(board, x, y, side, size, True, COMPUTER)
@@ -223,27 +223,14 @@ def vertical_surroundings_validation(board, x, y, size):
     if y + size > N or y < 0:
         return False
     if x == 0:
-        if y == 0 and y + size == N:
-            return check_rectangle(board, x, y, x+1, y + size)
-        elif y == 0 and y + size + 1 <= N:
+        if y == 0 and y + size + 1 <= N:
             return check_rectangle(board, x, y, x+1, y + size+1)
         elif y > 0 and y + size == N:
             return check_rectangle(board, x, y-1, x+1, y + size)
         elif y > 0 and y + size + 1 <= N:
             return check_rectangle(board, x, y-1, x+1, y + size+1)
-    elif x == N:
-        if y == 0 and y + size == N:
-            return check_rectangle(board, x-1, y, x, y + size)
-        elif y == 0 and y + size + 1 <= N:
-            return check_rectangle(board, x-1, y, x, y + size+1)
-        elif y > 0 and y + size == N:
-            return check_rectangle(board, x-1, y-1, x, y + size)
-        elif y > 0 and y + size + 1 <= N:
-            return check_rectangle(board, x-1, y-1, x, y + size+1)
     else:
-        if y == 0 and y + size == N:
-            return check_rectangle(board, x-1, y, x+1, y + size)
-        elif y == 0 and y + size + 1 <= N:
+        if y == 0 and y + size + 1 <= N:
             return check_rectangle(board, x-1, y, x+1, y + size)
         elif y > 0 and y + size == N:
             return check_rectangle(board, x-1, y-1, x+1, y + size)
@@ -256,27 +243,14 @@ def horizontal_surroundings_validation(board, x, y, size):
     if x + size > N or x < 0:
         return False
     if y == 0:
-        if x == 0 and x + size == N:
-            return check_rectangle(board, x, y, x+size, y+1)
-        elif x == 0 and x + size + 1 <= N:
-            return check_rectangle(board, x, y, x+size+1, y+1)
-        elif x > 0 and x + size == N:
-            return check_rectangle(board, x-1, y, x+size, y+1)
-        elif x > 0 and x + size + 1 <= N:
-            return check_rectangle(board, x-1, y, x+size+1, y+1)
-    elif y == N:
-        if x == 0 and x + size == N:
-            return check_rectangle(board, x, y, x+size, y+1)
-        elif x == 0 and x + size + 1 <= N:
+        if x == 0 and x + size + 1 <= N:
             return check_rectangle(board, x, y, x+size+1, y+1)
         elif x > 0 and x + size == N:
             return check_rectangle(board, x-1, y, x+size, y+1)
         elif x > 0 and x + size + 1 <= N:
             return check_rectangle(board, x-1, y, x+size+1, y+1)
     else:
-        if x == 0 and x + size == N:
-            return check_rectangle(board, x, y-1, x+size, y+1)
-        elif x == 0 and x + size + 1 <= N:
+        if x == 0 and x + size + 1 <= N:
             return check_rectangle(board, x, y-1, x+size+1, y+1)
         elif x > 0 and x + size == N:
             return check_rectangle(board, x-1, y-1, x+size, y+1)
@@ -286,8 +260,8 @@ def horizontal_surroundings_validation(board, x, y, size):
 
 
 def check_rectangle(board, x1, y1, x2, y2):
-    for i in range(x1, x2):
-        for j in range(y1, y2):
+    for i in range(x1, min(x2+1, N)):
+        for j in range(y1, min(y2+1, N)):
             if board[j][i] != ' ':
                 return False
     return True
@@ -346,7 +320,7 @@ def play_turn(target_b, player):
 
 
 def computer_attack_generator():
-    return [random.randint(0, N-1), random.randint(0, N-1)]
+    return [random.randint(0, N-1), random.randint(0, N-1)][::-1]
 
 
 def first_part():
@@ -354,7 +328,7 @@ def first_part():
     user_board = initialize_and_set_board(USER)
     print('Your following table:')
     computer_board = initialize_and_set_board(COMPUTER)
-    print_board(computer_board, USER)
+    print_board(computer_board, COMPUTER)
     print("The computer's following table:")
     print_board(user_board, USER)
     return [user_board, computer_board]
