@@ -7,7 +7,7 @@ MAX_SIZE = 4
 
 SHIPS = [0, 4, 3, 2, 1]
 
-BATTLESHIP_MARK = '*'
+SHIP_MARK = '*'
 MISS_MARK = 'X'
 HIT_MARK = 'V'
 EMPTY = ' '
@@ -181,31 +181,40 @@ def coordinates_retry(board, size, is_last):
     return validate_and_place(board, x, y, side, size, is_last, USER)
 
 
-def game_manager(boards, user_b, computer_b, player):
-    if player % 2 == 0:
-        computer_b = play_turn(boards[1], USER)
-    else:
-        user_b = play_turn(boards[0], COMPUTER)
-    game_manager(boards, user_b, computer_b, player + 1)
+def game_manager(boards, user_b, comp_b, user_drw, comp_drw):
+    [comp_b, user_drw] = user_turn(boards[1], user_drw)
+    [user_b, comp_drw] = comp_turn(boards[0], comp_drw)
+    print('Your following table:')
+    print_board(comp_b, COMPUTER)
+    print("The computer's following table:")
+    print_board(user_b, USER)
+    game_manager(boards, user_b, comp_b, user_drw, comp_drw)
+    
 
-
-def play_turn(target_b, player):
-    loc = ''
-    if player == USER:
-        print("It's your turn!")
-        print('Enter location for attack:')
-        loc = str(input())[::-1].split(',')
-        print('Your following table:')
-    else:
-        print("The computer's following table:")
-        loc = computer_attack_generator()
+def user_turn(target_b, drowned):
+    print("It's your turn!")
+    print('Enter location for attack:')
+    loc = str(input())[::-1].split(',')
     if check_move(target_b, int(loc[0]), int(loc[1])):
         target_b[int(loc[0])][int(loc[1])] = HIT_MARK
-        state_update(target_b, player, int(loc[0]), int(loc[1]))
+        if state_update(target_b, USER, int(loc[0]), int(loc[1])):
+            drowned += 1
+            print('{}/10 battleships remain!'.format(N - drowned))
     else:
         target_b[int(loc[0])][int(loc[1])] = MISS_MARK
-    print_board(target_b, player + 1)
-    return target_b
+    return [target_b, drowned]
+
+
+def comp_turn(target_b, drowned):
+    loc = computer_attack_generator()
+    if check_move(target_b, int(loc[0]), int(loc[1])):
+        target_b[int(loc[0])][int(loc[1])] = HIT_MARK
+        if state_update(target_b, COMPUTER, int(loc[0]), int(loc[1])):
+            drowned += 1
+            print('{}/10 battleships remain!'.format(N - drowned))
+    else:
+        target_b[int(loc[0])][int(loc[1])] = MISS_MARK
+    return [target_b, drowned]
 
 
 def computer_attack_generator():
@@ -213,9 +222,62 @@ def computer_attack_generator():
 
 
 def state_update(board, player, x, y):
-    pass
+    if drw(board, x, y):
+        if player % 2 == 0:
+            print("The computer's battleship has been drowned.")
+        else:
+            print("Your battleship has been drowned.")
+        return True
 
 
+def drw(brd, x, y):
+    try:
+        s = [brd[x-1][y], brd[x+1][y], brd[x][y-1], brd[x][y+1]]
+        if SHIP_MARK in s:
+            return False
+        # all surroundings are X or empty
+        if brd[x-1][y] == brd[x+1][y] == brd[x][y-1] == brd[x][y+1]:
+            return True
+    except IndexError:
+        if x-1 == 0:
+            if brd[x-1][y] == SHIP_MARK:
+                return False
+            else:
+                return drw(brd, x + 1, y)
+        elif x+1 == N:
+            if brd[x+1][y] == SHIP_MARK:
+                return False
+            else:
+                return drw(brd, x - 1, y)
+        if x - 1 >= 0 and x+1 <= N:
+            if brd[x - 1][y] == brd[x + 1][y] == HIT_MARK:
+                return drw(brd, x - 1, y) + drw(brd, x + 1, y)
+            if brd[x - 1][y] == HIT_MARK:
+                return drw(brd, x-2, y)
+            if brd[x+1][y] == HIT_MARK:
+                return drw(brd, x+2, y)
+            if brd[x - 1][y] == SHIP_MARK or brd[x + 1][y] == SHIP_MARK:
+                return False
+        if y-1 == 0:
+            if brd[x][y-1] == SHIP_MARK:
+                return False
+            else:
+                return drw(brd, y + 1, x)
+        elif y+1 == N:
+            if brd[x][y+1] == SHIP_MARK:
+                return False
+            else:
+                return drw(brd, y - 1, x)
+        if y - 1 >= 0 and y+1 <= N:
+            if brd[x][y - 1] == brd[x][y + 1] == HIT_MARK:
+                return drw(brd, x, y - 1) + drw(brd,x, y + 1)
+            if brd[x][y - 1] == HIT_MARK:
+                return drw(brd, x, y-2)
+            if brd[x][y+1] == HIT_MARK:
+                return drw(brd, x, y+2)
+            if brd[x][y - 1] == SHIP_MARK or brd[x][y + 1] == SHIP_MARK:
+                return False
+        return True
 
 def first_part():
     print('Your current board:')
@@ -238,7 +300,7 @@ def main():
     boards = first_part()
     user_play_board = board_generator()
     comp_play_board = board_generator()
-    game_manager(boards, user_play_board, comp_play_board, 2)
+    game_manager(boards, user_play_board, comp_play_board, 0, 0)
 
 
 if __name__ == '__main__':
