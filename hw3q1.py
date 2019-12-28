@@ -182,14 +182,15 @@ def coordinates_retry(board, size, is_last):
 
 
 def game_manager(boards, user_b, comp_b, user_drw, comp_drw):
-    [comp_b, user_drw] = user_turn(boards[1], user_drw)
-    [user_b, comp_drw] = comp_turn(boards[0], comp_drw)
-    print('Your following table:')
-    print_board(comp_b, COMPUTER)
-    print("The computer's following table:")
-    print_board(user_b, USER)
-    game_manager(boards, user_b, comp_b, user_drw, comp_drw)
-    
+    while not user_drw == N or comp_drw == N:
+        [comp_b, user_drw] = user_turn(boards[1], user_drw)
+        [user_b, comp_drw] = comp_turn(boards[0], comp_drw)
+        print('Your following table:')
+        print_board(comp_b, COMPUTER)
+        print("The computer's following table:")
+        print_board(user_b, USER)
+        # game_manager(boards, user_b, comp_b, user_drw, comp_drw)
+
 
 def user_turn(target_b, drowned):
     print("It's your turn!")
@@ -206,7 +207,9 @@ def user_turn(target_b, drowned):
 
 
 def comp_turn(target_b, drowned):
-    loc = computer_attack_generator()
+    loc = computer_attack_generator(target_b)
+    if loc == [2, 2]:
+        pass
     if check_move(target_b, int(loc[0]), int(loc[1])):
         target_b[int(loc[0])][int(loc[1])] = HIT_MARK
         if state_update(target_b, COMPUTER, int(loc[0]), int(loc[1])):
@@ -217,8 +220,13 @@ def comp_turn(target_b, drowned):
     return [target_b, drowned]
 
 
-def computer_attack_generator():
-    return [random.randint(0, N-1), random.randint(0, N-1)][::-1]
+def computer_attack_generator(board):
+    y = random.randint(0, N-1)
+    x = random.randint(0, N-1)
+    while board[x][y] == HIT_MARK or board[x][y] == MISS_MARK:
+        y = random.randint(0, N - 1)
+        x = random.randint(0, N - 1)
+    return [x, y]
 
 
 def state_update(board, player, x, y):
@@ -231,53 +239,68 @@ def state_update(board, player, x, y):
 
 
 def drw(brd, x, y):
-    try:
-        s = [brd[x-1][y], brd[x+1][y], brd[x][y-1], brd[x][y+1]]
-        if SHIP_MARK in s:
-            return False
-        # all surroundings are X or empty
-        if brd[x-1][y] == brd[x+1][y] == brd[x][y-1] == brd[x][y+1]:
-            return True
-    except IndexError:
-        if x-1 == 0:
-            if brd[x-1][y] == SHIP_MARK:
+    for i in range(max(x-1, 0), min(x + 2, N)):
+        for j in range(max(y-1, 0), min(y+2, N)):
+            # if brd[i][j] == ' ':
+            #     print('-', end='')
+            # else:
+            #     print(brd[i][j])
+            if brd[i][j] == SHIP_MARK:
                 return False
-            else:
-                return drw(brd, x + 1, y)
-        elif x+1 == N:
-            if brd[x+1][y] == SHIP_MARK:
-                return False
-            else:
-                return drw(brd, x - 1, y)
-        if x - 1 >= 0 and x+1 <= N:
-            if brd[x - 1][y] == brd[x + 1][y] == HIT_MARK:
-                return drw(brd, x - 1, y) + drw(brd, x + 1, y)
-            if brd[x - 1][y] == HIT_MARK:
-                return drw(brd, x-2, y)
-            if brd[x+1][y] == HIT_MARK:
-                return drw(brd, x+2, y)
-            if brd[x - 1][y] == SHIP_MARK or brd[x + 1][y] == SHIP_MARK:
-                return False
-        if y-1 == 0:
-            if brd[x][y-1] == SHIP_MARK:
-                return False
-            else:
-                return drw(brd, y + 1, x)
-        elif y+1 == N:
-            if brd[x][y+1] == SHIP_MARK:
-                return False
-            else:
-                return drw(brd, y - 1, x)
-        if y - 1 >= 0 and y+1 <= N:
-            if brd[x][y - 1] == brd[x][y + 1] == HIT_MARK:
-                return drw(brd, x, y - 1) + drw(brd,x, y + 1)
-            if brd[x][y - 1] == HIT_MARK:
-                return drw(brd, x, y-2)
-            if brd[x][y+1] == HIT_MARK:
-                return drw(brd, x, y+2)
-            if brd[x][y - 1] == SHIP_MARK or brd[x][y + 1] == SHIP_MARK:
-                return False
-        return True
+            if brd[i][j] == HIT_MARK and i != x and j != y:
+                return drw(brd, i, j)
+        # print()
+    return True
+
+
+    # try:
+    #     # if * in surroundings
+    #     s = [brd[x-1][y], brd[x+1][y], brd[x][y-1], brd[x][y+1]]
+    #     if SHIP_MARK in s:
+    #         return False
+    #     # if all surroundings are X or empty
+    #     if brd[x-1][y] == brd[x+1][y] == brd[x][y-1] == brd[x][y+1]:
+    #         return True
+    # except IndexError:
+    #     if x-1 == 0:
+    #         if brd[x-1][y] == SHIP_MARK:
+    #             return False
+    #         else:
+    #             return drw(brd, x + 1, y)
+    #     elif x+1 == N:
+    #         if brd[x+1][y] == SHIP_MARK:
+    #             return False
+    #         else:
+    #             return drw(brd, x - 1, y)
+    #     if x - 1 >= 0 and x+1 <= N:
+    #         if brd[x - 1][y] == brd[x + 1][y] == HIT_MARK:
+    #             return drw(brd, x - 1, y) + drw(brd, x + 1, y)
+    #         if brd[x - 1][y] == HIT_MARK:
+    #             return drw(brd, x-2, y)
+    #         if brd[x+1][y] == HIT_MARK:
+    #             return drw(brd, x+2, y)
+    #         if brd[x - 1][y] == SHIP_MARK or brd[x + 1][y] == SHIP_MARK:
+    #             return False
+    #     if y-1 == 0:
+    #         if brd[x][y-1] == SHIP_MARK:
+    #             return False
+    #         else:
+    #             return drw(brd, y + 1, x)
+    #     elif y+1 == N:
+    #         if brd[x][y+1] == SHIP_MARK:
+    #             return False
+    #         else:
+    #             return drw(brd, y - 1, x)
+    #     if y - 1 >= 0 and y+1 <= N:
+    #         if brd[x][y - 1] == brd[x][y + 1] == HIT_MARK:
+    #             return drw(brd, x, y - 1) + drw(brd,x, y + 1)
+    #         if brd[x][y - 1] == HIT_MARK:
+    #             return drw(brd, x, y-2)
+    #         if brd[x][y+1] == HIT_MARK:
+    #             return drw(brd, x, y+2)
+    #         if brd[x][y - 1] == SHIP_MARK or brd[x][y + 1] == SHIP_MARK:
+    #             return False
+    #     return True
 
 def first_part():
     print('Your current board:')

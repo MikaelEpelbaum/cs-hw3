@@ -448,7 +448,7 @@ The computer's following table:
     - - - - - - - - - -
 0 |             * *   *
 1 |   *   *         X *
-2 |   *   *           *
+2 |   * X *           *
 3 |                   V
 4 |           *   V    
 5 |     * X   *     X  
@@ -477,7 +477,7 @@ The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
 0 |             * *   *
-1 |   *   *         X *
+1 |   *   *         X V
 2 |   * X *           *
 3 |                   V
 4 |           *   V    
@@ -507,15 +507,15 @@ The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
 0 |             * *   *
-1 |   *   *         X *
+1 |   *   *         X V
 2 |   * X *           *
 3 |                   V
-4 |           *   X    
+4 |           *   V    
 5 |     * X   *     X  
 6 |           V        
 7 |       *         X  
 8 |   *   X            
-9 |             * * *  
+9 |           X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -537,15 +537,15 @@ The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
 0 |             * *   *
-1 |   *   *         X *
+1 |   *   *         X V
 2 |   * X *           *
-3 |                   V
-4 |           *   X    
+3 |                 X V
+4 |           *   V    
 5 |     * X   *     X  
 6 |           V        
 7 |       *         X  
 8 |   *   X            
-9 |             * * *  
+9 |           X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -569,13 +569,13 @@ The computer's following table:
 0 |             * *   *
 1 |   *   *         X V
 2 |   * X *           *
-3 |                   V
-4 |           *   X    
+3 |                 X V
+4 |           *   V    
 5 |     * X   *     X  
 6 |           V        
 7 |       *         X  
-8 |   *   X            
-9 |             * * *  
+8 |   *   X     X      
+9 |           X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -598,13 +598,13 @@ The computer's following table:
     - - - - - - - - - -
 0 |             * *   *
 1 |   *   *         X V
-2 |   * X *           *
-3 |                   V
-4 |           *   X    
+2 |   * X *       X   *
+3 |                 X V
+4 |           *   V    
 5 |     * X   *     X  
 6 |           V        
 7 |       *         X  
-8 |   *   X            
+8 |   *   X     X      
 9 |           X * * *  
 
 It's your turn!
@@ -628,13 +628,13 @@ The computer's following table:
     - - - - - - - - - -
 0 |             * *   *
 1 |   *   *         X V
-2 |   * X *           *
+2 |   * X *       X   *
 3 |                 X V
-4 |           *   X    
+4 |           *   V    
 5 |     * X   *     X  
 6 |           V        
 7 |       *         X  
-8 |   *   X            
+8 | X *   X     X      
 9 |           X * * *  
 
 It's your turn!
@@ -658,14 +658,14 @@ The computer's following table:
     - - - - - - - - - -
 0 |             * *   *
 1 |   *   *         X V
-2 |   * X *           *
+2 |   * X *       X   *
 3 |                 X V
-4 |           *   X    
+4 |           *   V    
 5 |     * X   *     X  
 6 |           V        
 7 |       *         X  
-8 |   *   X     X      
-9 |           X * * *  
+8 | X *   X     X      
+9 |   X       X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -690,12 +690,12 @@ The computer's following table:
 1 |   *   *         X V
 2 |   * X *       X   *
 3 |                 X V
-4 |           *   X    
+4 |           V   V    
 5 |     * X   *     X  
 6 |           V        
 7 |       *         X  
-8 |   *   X     X      
-9 |           X * * *  
+8 | X *   X     X      
+9 |   X       X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -720,12 +720,12 @@ The computer's following table:
 1 |   *   *         X V
 2 |   * X *       X   *
 3 |                 X V
-4 |           *   X    
+4 |           V   V    
 5 |     * X   *     X  
-6 |           V        
+6 |       X   V        
 7 |       *         X  
-8 |   *   X     X      
-9 |           X * * *  
+8 | X *   X     X      
+9 |   X       X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -749,13 +749,13 @@ The computer's following table:
 0 |             * *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |                 X V
-4 |           *   X    
+3 |               X X V
+4 |           V   V    
 5 |     * X   *     X  
-6 |           V        
+6 |       X   V        
 7 |       *         X  
 8 | X *   X     X      
-9 |           X * * *  
+9 |   X       X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -779,10 +779,10 @@ The computer's following table:
 0 |             * *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |                 X V
-4 |           *   X    
+3 |     X         X X V
+4 |           V   V    
 5 |     * X   *     X  
-6 |           V        
+6 |       X   V        
 7 |       *         X  
 8 | X *   X     X      
 9 |   X       X * * *  
@@ -809,13 +809,13 @@ The computer's following table:
 0 |             * *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |                 X V
-4 |           V   X    
+3 |     X         X X V
+4 |           V   V    
 5 |     * X   *     X  
-6 |           V        
+6 |       X   V        
 7 |       *         X  
 8 | X *   X     X      
-9 |   X       X * * *  
+9 | X X       X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -839,13 +839,13 @@ The computer's following table:
 0 |             * *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |                 X V
-4 |           V   X    
-5 |     * X   *     X  
+3 |     X         X X V
+4 |           V   V    
+5 |     * X X *     X  
 6 |       X   V        
 7 |       *         X  
 8 | X *   X     X      
-9 |   X       X * * *  
+9 | X X       X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -869,13 +869,13 @@ The computer's following table:
 0 |             * *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |               X X V
-4 |           V   X    
-5 |     * X   *     X  
+3 |     X         X X V
+4 |           V   V    
+5 | X   * X X *     X  
 6 |       X   V        
 7 |       *         X  
 8 | X *   X     X      
-9 |   X       X * * *  
+9 | X X       X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -900,12 +900,12 @@ The computer's following table:
 1 |   *   *         X V
 2 |   * X *       X   *
 3 |     X         X X V
-4 |           V   X    
-5 |     * X   *     X  
+4 |           V X V    
+5 | X   * X X *     X  
 6 |       X   V        
 7 |       *         X  
 8 | X *   X     X      
-9 |   X       X * * *  
+9 | X X       X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -926,16 +926,16 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 |             * *   *
+0 | X           * *   *
 1 |   *   *         X V
 2 |   * X *       X   *
 3 |     X         X X V
-4 |           V   X    
-5 |     * X   *     X  
+4 |           V X V    
+5 | X   * X X *     X  
 6 |       X   V        
 7 |       *         X  
 8 | X *   X     X      
-9 |   X       X * * *  
+9 | X X       X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -956,15 +956,15 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 |             * *   *
+0 | X           * *   *
 1 |   *   *         X V
 2 |   * X *       X   *
 3 |     X         X X V
-4 |           V   X    
-5 |     * X   *     X  
+4 |           V X V    
+5 | X   * X X *     X  
 6 |       X   V        
 7 |       *         X  
-8 | X *   X     X      
+8 | X *   X     X   X  
 9 | X X       X * * *  
 
 It's your turn!
@@ -986,15 +986,15 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 |             * *   *
+0 | X           * *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |     X         X X V
-4 |           V   X    
-5 |     * X   *     X  
+3 |     X       X X X V
+4 |           V X V    
+5 | X   * X X *     X  
 6 |       X   V        
 7 |       *         X  
-8 | X *   X     X      
+8 | X *   X     X   X  
 9 | X X       X * * *  
 
 It's your turn!
@@ -1016,15 +1016,15 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 |             * *   *
+0 | X           V *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |     X         X X V
-4 |           V   X    
-5 |     * X X *     X  
+3 |     X       X X X V
+4 |           V X V    
+5 | X   * X X *     X  
 6 |       X   V        
 7 |       *         X  
-8 | X *   X     X      
+8 | X *   X     X   X  
 9 | X X       X * * *  
 
 It's your turn!
@@ -1046,16 +1046,16 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 |             * *   *
+0 | X           V *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |     X         X X V
-4 |           V   X    
+3 |     X       X X X V
+4 |           V X V    
 5 | X   * X X *     X  
 6 |       X   V        
 7 |       *         X  
-8 | X *   X     X      
-9 | X X       X * * *  
+8 | X *   X     X   X  
+9 | X X   X   X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -1076,16 +1076,16 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 |             * *   *
+0 | X           V *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |     X         X X V
-4 |           V X X    
+3 |     X       X X X V
+4 |           V X V    
 5 | X   * X X *     X  
 6 |       X   V        
-7 |       *         X  
-8 | X *   X     X      
-9 | X X       X * * *  
+7 | X     *         X  
+8 | X *   X     X   X  
+9 | X X   X   X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -1106,16 +1106,16 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X           * *   *
+0 | X           V *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |     X         X X V
-4 |           V X X    
+3 |     X     X X X X V
+4 |           V X V    
 5 | X   * X X *     X  
 6 |       X   V        
-7 |       *         X  
-8 | X *   X     X      
-9 | X X       X * * *  
+7 | X     *         X  
+8 | X *   X     X   X  
+9 | X X   X   X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -1136,16 +1136,16 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X           * *   *
+0 | X       X   V *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |     X         X X V
-4 |           V X X    
+3 |     X     X X X X V
+4 |           V X V    
 5 | X   * X X *     X  
 6 |       X   V        
-7 |       *         X  
+7 | X     *         X  
 8 | X *   X     X   X  
-9 | X X       X * * *  
+9 | X X   X   X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -1166,19 +1166,21 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X           * *   *
+0 | X       X   V *   *
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |     X         X X V
-4 |           V X X    
+3 |     X     X X X X V
+4 |           V X V    
 5 | X   * X X *     X  
 6 |       X   V        
-7 |       *         X  
+7 | X     *       X X  
 8 | X *   X     X   X  
-9 | X X       X * * *  
+9 | X X   X   X * * *  
 
 It's your turn!
 Enter location for attack:
+Your battleship has been drowned.
+8/10 battleships remain!
 Your following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
@@ -1196,19 +1198,21 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X           * *   *
+0 | X       X   V *   V
 1 |   *   *         X V
 2 |   * X *       X   *
-3 |     X       X X X V
-4 |           V X X    
+3 |     X     X X X X V
+4 |           V X V    
 5 | X   * X X *     X  
 6 |       X   V        
-7 |       *         X  
+7 | X     *       X X  
 8 | X *   X     X   X  
-9 | X X       X * * *  
+9 | X X   X   X * * *  
 
 It's your turn!
 Enter location for attack:
+Your battleship has been drowned.
+7/10 battleships remain!
 Your following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
@@ -1226,16 +1230,16 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X           * *   *
+0 | X       X   V *   V
 1 |   *   *         X V
-2 |   * X *       X   *
-3 |     X       X X X V
-4 |           V X X    
+2 |   * X *       X   V
+3 |     X     X X X X V
+4 |           V X V    
 5 | X   * X X *     X  
 6 |       X   V        
-7 |       *         X  
+7 | X     *       X X  
 8 | X *   X     X   X  
-9 | X X       X * * *  
+9 | X X   X   X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -1256,16 +1260,16 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X           V *   *
+0 | X       X   V *   V
 1 |   *   *         X V
-2 |   * X *       X   *
-3 |     X       X X X V
-4 |           V X X    
+2 |   * X *       X   V
+3 |     X     X X X X V
+4 |           V X V    
 5 | X   * X X *     X  
-6 |       X   V        
-7 |       *         X  
+6 |       X   V X      
+7 | X     *       X X  
 8 | X *   X     X   X  
-9 | X X       X * * *  
+9 | X X   X   X * * *  
 
 It's your turn!
 Enter location for attack:
@@ -1286,14 +1290,14 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X           V *   *
+0 | X       X   V *   V
 1 |   *   *         X V
-2 |   * X *       X   *
-3 |     X       X X X V
-4 |           V X X    
+2 |   * X *       X   V
+3 | X   X     X X X X V
+4 |           V X V    
 5 | X   * X X *     X  
-6 |       X   V        
-7 |       *         X  
+6 |       X   V X      
+7 | X     *       X X  
 8 | X *   X     X   X  
 9 | X X   X   X * * *  
 
@@ -1316,16 +1320,16 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X           V *   *
+0 | X       X   V *   V
 1 |   *   *         X V
-2 |   * X *       X   *
-3 |     X       X X X V
-4 |           V X X    
+2 |   * X *       X   V
+3 | X   X     X X X X V
+4 |           V X V    
 5 | X   * X X *     X  
-6 |       X   V        
-7 | X     *         X  
+6 |       X   V X      
+7 | X     *       X X  
 8 | X *   X     X   X  
-9 | X X   X   X * * *  
+9 | X X   X   X * * V  
 
 It's your turn!
 Enter location for attack:
@@ -1346,19 +1350,21 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X           V *   *
+0 | X       X   V *   V
 1 |   *   *         X V
-2 |   * X *       X   *
-3 |     X     X X X X V
-4 |           V X X    
+2 |   * X *       X   V
+3 | X   X     X X X X V
+4 |         X V X V    
 5 | X   * X X *     X  
-6 |       X   V        
-7 | X     *         X  
+6 |       X   V X      
+7 | X     *       X X  
 8 | X *   X     X   X  
-9 | X X   X   X * * *  
+9 | X X   X   X * * V  
 
 It's your turn!
 Enter location for attack:
+Your battleship has been drowned.
+6/10 battleships remain!
 Your following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
@@ -1376,16 +1382,16 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X       X   V *   *
+0 | X       X   V *   V
 1 |   *   *         X V
-2 |   * X *       X   *
-3 |     X     X X X X V
-4 |           V X X    
+2 |   * X *       X   V
+3 | X   X     X X X X V
+4 |         X V X V    
 5 | X   * X X *     X  
-6 |       X   V        
-7 | X     *         X  
-8 | X *   X     X   X  
-9 | X X   X   X * * *  
+6 |       X   V X      
+7 | X     *       X X  
+8 | X V   X     X   X  
+9 | X X   X   X * * V  
 
 It's your turn!
 Enter location for attack:
@@ -1406,16 +1412,16 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X       X   V *   *
+0 | X       X   V *   V
 1 |   *   *         X V
-2 |   * X *       X   *
-3 |     X     X X X X V
-4 |           V X X    
+2 |   * X *       X   V
+3 | X   X     X X X X V
+4 |         X V X V    
 5 | X   * X X *     X  
-6 |       X   V        
-7 | X     *         X  
-8 | X *   X     X   X  
-9 | X X   X   X * * *  
+6 |       X   V X      
+7 | X     *       X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V  
 
 It's your turn!
 Enter location for attack:
@@ -1436,16 +1442,1544 @@ Your following table:
 The computer's following table:
     0 1 2 3 4 5 6 7 8 9
     - - - - - - - - - -
-0 | X       X   V *   *
+0 | X X     X   V *   V
 1 |   *   *         X V
-2 |   * X *       X   *
-3 |     X     X X X X V
-4 |           V X X    
+2 |   * X *       X   V
+3 | X   X     X X X X V
+4 |         X V X V    
 5 | X   * X X *     X  
-6 |       X   V        
+6 |       X   V X      
 7 | X     *       X X  
-8 | X *   X     X   X  
-9 | X X   X   X * * *  
+8 | X V   X     X   X  
+9 | X X   X X X * * V  
 
 It's your turn!
 Enter location for attack:
+The computer's battleship has been drowned.
+7/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |           X     X  
+2 |   X           V V  
+3 |     X     X X      
+4 | X     X X X X X   X
+5 | X X       X   X X V
+6 | V       V   X     V
+7 |           X X   X  
+8 | V X X     X V X V  
+9 |   X X   X   X X    
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 |   *   *     X   X V
+2 |   * X *       X   V
+3 | X   X     X X X X V
+4 |         X V X V    
+5 | X   * X X *     X  
+6 |       X   V X      
+7 | X     *       X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V  
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |           X     X  
+2 |   X           V V  
+3 |     X     X X      
+4 | X     X X X X X   X
+5 | X X       X   X X V
+6 | V       V   X     V
+7 |           X X   X X
+8 | V X X     X V X V  
+9 |   X X   X   X X    
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 |   *   *     X   X V
+2 |   * X *       X   V
+3 | X   X     X X X X V
+4 |         X V X V    
+5 | X   * X X *     X  
+6 |   X   X   V X      
+7 | X     *       X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V  
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |           X     X  
+2 |   X           V V  
+3 |     X     X X      
+4 | X     X X X X X   X
+5 | X X       X   X X V
+6 | V       V   X X   V
+7 |           X X   X X
+8 | V X X     X V X V  
+9 |   X X   X   X X    
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 |   *   *     X   X V
+2 |   * X *       X   V
+3 | X   X     X X X X V
+4 |         X V X V    
+5 | X   * X X *     X  
+6 |   X   X X V X      
+7 | X     *       X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V  
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |           X     X  
+2 |   X           V V  
+3 |     X     X X      
+4 | X     X X X X X   X
+5 | X X       X   X X V
+6 | V       V   X X   V
+7 |   X       X X   X X
+8 | V X X     X V X V  
+9 |   X X   X   X X    
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 |   *   *     X   X V
+2 |   * X *     X X   V
+3 | X   X     X X X X V
+4 |         X V X V    
+5 | X   * X X *     X  
+6 |   X   X X V X      
+7 | X     *       X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V  
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |           X   X X  
+2 |   X           V V  
+3 |     X     X X      
+4 | X     X X X X X   X
+5 | X X       X   X X V
+6 | V       V   X X   V
+7 |   X       X X   X X
+8 | V X X     X V X V  
+9 |   X X   X   X X    
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 |   *   *     X   X V
+2 |   * X *     X X   V
+3 | X   X     X X X X V
+4 |         X V X V    
+5 | X   * X X *     X  
+6 |   X   X X V X      
+7 | X     * X     X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V  
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |           X   X X  
+2 |   X       V   V V  
+3 |     X     X X      
+4 | X     X X X X X   X
+5 | X X       X   X X V
+6 | V       V   X X   V
+7 |   X       X X   X X
+8 | V X X     X V X V  
+9 |   X X   X   X X    
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 |   *   *     X   X V
+2 |   * X *     X X   V
+3 | X   X     X X X X V
+4 |         X V X V    
+5 | X X * X X *     X  
+6 |   X   X X V X      
+7 | X     * X     X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V  
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |           X   X X  
+2 |   X       V   V V  
+3 |     X     X X      
+4 | X   X X X X X X   X
+5 | X X       X   X X V
+6 | V       V   X X   V
+7 |   X       X X   X X
+8 | V X X     X V X V  
+9 |   X X   X   X X    
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 |   *   *     X   X V
+2 |   * X *     X X   V
+3 | X   X     X X X X V
+4 |         X V X V    
+5 | X X * X X *     X  
+6 |   X   X X V X      
+7 | X     * X     X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X   X X  
+2 |   X       V   V V  
+3 |     X     X X      
+4 | X   X X X X X X   X
+5 | X X       X   X X V
+6 | V       V   X X   V
+7 |   X       X X   X X
+8 | V X X     X V X V  
+9 |   X X   X   X X    
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 |   *   *     X   X V
+2 |   * X V     X X   V
+3 | X   X     X X X X V
+4 |         X V X V    
+5 | X X * X X *     X  
+6 |   X   X X V X      
+7 | X     * X     X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X  
+2 |   X       V   V V  
+3 |     X     X X      
+4 | X   X X X X X X   X
+5 | X X       X   X X V
+6 | V       V   X X   V
+7 |   X       X X   X X
+8 | V X X     X V X V  
+9 |   X X   X   X X    
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 |   *   *     X   X V
+2 |   * X V     X X   V
+3 | X X X     X X X X V
+4 |         X V X V    
+5 | X X * X X *     X  
+6 |   X   X X V X      
+7 | X     * X     X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X  
+2 |   X       V   V V  
+3 |     X     X X      
+4 | X   X X X X X X   X
+5 | X X       X   X X V
+6 | V       V   X X   V
+7 |   X       X X   X X
+8 | V X X     X V X V  
+9 |   X X   X   X X   X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   *     X   X V
+2 |   * X V     X X   V
+3 | X X X     X X X X V
+4 |         X V X V    
+5 | X X * X X *     X  
+6 |   X   X X V X      
+7 | X     * X     X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X  
+2 |   X       V   V V  
+3 |     X     X X      
+4 | X   X X X X X X   X
+5 | X X       X   X X V
+6 | V   X   V   X X   V
+7 |   X       X X   X X
+8 | V X X     X V X V  
+9 |   X X   X   X X   X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   *     X   X V
+2 |   * X V     X X   V
+3 | X X X     X X X X V
+4 |         X V X V    
+5 | X X * X X *   X X  
+6 |   X   X X V X      
+7 | X     * X     X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X  
+2 |   X       V   V V  
+3 |     X     X X      
+4 | X   X X X X X X   X
+5 | X X       X   X X V
+6 | V   X   V   X X   V
+7 |   X       X X X X X
+8 | V X X     X V X V  
+9 |   X X   X   X X   X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   *     X   X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |         X V X V    
+5 | X X * X X *   X X  
+6 |   X   X X V X      
+7 | X     * X     X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your battleship has been drowned.
+5/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X  
+2 |   X       V   V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X       X   X X V
+6 | V   X   V   X X   V
+7 |   X       X X X X X
+8 | V X X     X V X V  
+9 |   X X   X   X X   X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   V     X   X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |         X V X V    
+5 | X X * X X *   X X  
+6 |   X   X X V X      
+7 | X     * X     X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X  
+2 |   X       V   V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X   V   X X   V
+7 |   X       X X X X X
+8 | V X X     X V X V  
+9 |   X X   X   X X   X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   V     X   X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |         X V X V    
+5 | X X * X X *   X X  
+6 |   X   X X V X      
+7 | X     * X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X  
+2 |   X       V   V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X   V   X X   V
+7 |   X       X X X X X
+8 | V X X     X V X V  
+9 |   X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   V     X   X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V    
+5 | X X * X X *   X X  
+6 |   X   X X V X      
+7 | X     * X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X  
+2 |   X       V   V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X   V   X X   V
+7 |   X       X X X X X
+8 | V X X     X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   V     X   X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V    
+5 | X X * X X *   X X  
+6 |   X   X X V X     X
+7 | X     * X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+The computer's battleship has been drowned.
+6/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X  
+2 |   X       V V V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X   V   X X   V
+7 |   X       X X X X X
+8 | V X X     X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   V     X   X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V    
+5 | X X * X X *   X X  
+6 |   X   X X V X     X
+7 | X X   * X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X X
+2 |   X       V V V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X   V   X X   V
+7 |   X       X X X X X
+8 | V X X     X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   V     X   X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V   X
+5 | X X * X X *   X X  
+6 |   X   X X V X     X
+7 | X X   * X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X X
+2 |   X       V V V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X   V   X X   V
+7 |   X     X X X X X X
+8 | V X X     X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   V X   X   X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V   X
+5 | X X * X X *   X X  
+6 |   X   X X V X     X
+7 | X X   * X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+The computer's battleship has been drowned.
+5/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X X
+2 |   X       V V V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X   V   X X   V
+7 |   X     X X X X X X
+8 | V X X V   X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   V X X X   X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V   X
+5 | X X * X X *   X X  
+6 |   X   X X V X     X
+7 | X X   * X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X        
+1 |         X X X X X X
+2 |   X       V V V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X   V   X X   V
+7 |   X     X X X X X X
+8 | V X X V X X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V   X
+5 | X X * X X *   X X  
+6 |   X   X X V X     X
+7 | X X   * X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your battleship has been drowned.
+4/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X     V  
+1 |         X X X X X X
+2 |   X       V V V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X   V   X X   V
+7 |   X     X X X X X X
+8 | V X X V X X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X     X   V *   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V   X
+5 | X X * X X *   X X  
+6 |   X   X X V X     X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X     V  
+1 |         X X X X X X
+2 |   X       V V V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X     X X X X X X
+8 | V X X V X X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X   X   V *   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V   X
+5 | X X * X X *   X X  
+6 |   X   X X V X     X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+The computer's battleship has been drowned.
+4/10 battleships remain!
+Your battleship has been drowned.
+3/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X     V V
+1 |         X X X X X X
+2 |   X       V V V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X     X X X X X X
+8 | V X X V X X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X   X   V *   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V   X
+5 | X X V X X *   X X  
+6 |   X   X X V X     X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X     V V
+1 |         X X X X X X
+2 |   X   X   V V V V  
+3 |     X     X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X     X X X X X X
+8 | V X X V X X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X   X   V *   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X     X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+The computer's battleship has been drowned.
+3/10 battleships remain!
+Your battleship has been drowned.
+2/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X     V V
+1 |         X X X X X X
+2 |   X   X   V V V V  
+3 |     X V   X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X     X X X X X X
+8 | V X X V X X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X   X   V V   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X     X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X     X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X     V V
+1 |         X X X X X X
+2 |   X   X   V V V V  
+3 |     X V   X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V  
+9 | X X X   X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X   X   V V   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X     X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X * * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X     V V
+1 |         X X X X X X
+2 |   X   X   V V V V  
+3 |     X V   X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V  
+9 | X X X X X   X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X   X   V V   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X     X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X V * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X     V V
+1 |         X X X X X X
+2 |   X   X   V V V V  
+3 |     X V   X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V  
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X   X   V V   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X   X X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X V * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X     V V
+1 |     X   X X X X X X
+2 |   X   X   V V V V  
+3 |     X V   X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V  
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X   X   V V   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X     X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X V * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X     V V
+1 |   V X   X X X X X X
+2 |   X   X   V V V V  
+3 |     X V   X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V  
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X   X   V V   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X V * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X X   V V
+1 |   V X   X X X X X X
+2 |   X   X   V V V V  
+3 |     X V   X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V  
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X   X X V V   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X V * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X X   V V
+1 |   V X   X X X X X X
+2 |   X X X   V V V V  
+3 |     X V   X X      
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V  
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V   V
+1 | X *   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X V * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X X   V V
+1 |   V X   X X X X X X
+2 |   X X X   V V V V  
+3 |     X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V  
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V   V
+1 | X V   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X  
+8 | X V   X     X   X  
+9 | X X   X X X V * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X     X X   V V
+1 |   V X   X X X X X X
+2 |   X X X   V V V V  
+3 |     X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V   V
+1 | X V   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X  
+8 | X V   X     X X X  
+9 | X X   X X X V * V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X X   X X   V V
+1 |   V X   X X X X X X
+2 |   X X X   V V V V  
+3 |     X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V   V
+1 | X V   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X  
+8 | X V X X     X X X  
+9 | X X   X X X V * V X
+
+It's your turn!
+Enter location for attack:
+Your battleship has been drowned.
+1/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X X X X X   V V
+1 |   V X   X X X X X X
+2 |   X X X   V V V V  
+3 |     X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V   V
+1 | X V   V X X X X X V
+2 |   * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X  
+8 | X V X X     X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X X X X X   V V
+1 | X V X   X X X X X X
+2 |   X X X   V V V V  
+3 |     X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V   V
+1 | X V   V X X X X X V
+2 | X * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X *   X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X  
+8 | X V X X     X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X X X X X   V V
+1 | X V X   X X X X X X
+2 |   X X X   V V V V  
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X     X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V   V
+1 | X V   V X X X X X V
+2 | X * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X * X X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X  
+8 | X V X X     X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X   X X X X X   V V
+1 | X V X   X X X X X X
+2 |   X X X   V V V V  
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X   X X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V X V
+1 | X V   V X X X X X V
+2 | X * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X * X X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X  
+8 | X V X X     X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+The computer's battleship has been drowned.
+2/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X V X X X X X   V V
+1 | X V X   X X X X X X
+2 |   X X X   V V V V  
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X   X X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V X V
+1 | X V   V X X X X X V
+2 | X * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X * X X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X X
+8 | X V X X     X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+The computer's battleship has been drowned.
+1/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X V X X X X X V V V
+1 | X V X   X X X X X X
+2 |   X X X   V V V V  
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X   X X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V X V
+1 | X V   V X X X X X V
+2 | X * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X * X X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X X
+8 | X V X X X   X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X V X X X X X V V V
+1 | X V X   X X X X X X
+2 |   X X X X V V V V  
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X   X X   X X V
+6 | V   X X V   X X   V
+7 |   X X   X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V X V
+1 | X V X V X X X X X V
+2 | X * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X * X X X  
+6 |   X   X X V X X X X
+7 | X X   V X   X X X X
+8 | X V X X X   X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X V X X X X X V V V
+1 | X V X   X X X X X X
+2 |   X X X X V V V V  
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X   X X   X X V
+6 | V   X X V   X X   V
+7 |   X X X X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V X V
+1 | X V X V X X X X X V
+2 | X * X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X * X X X X
+6 |   X   X X V X X X X
+7 | X X   V X   X X X X
+8 | X V X X X   X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+Your battleship has been drowned.
+0/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X V X X X X X V V V
+1 | X V X   X X X X X X
+2 | X X X X X V V V V  
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X   X X   X X V
+6 | V   X X V   X X   V
+7 |   X X X X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V X V
+1 | X V X V X X X X X V
+2 | X V X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X * X X X X
+6 |   X   X X V X X X X
+7 | X X   V X   X X X X
+8 | X V X X X   X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X V X X X X X V V V
+1 | X V X X X X X X X X
+2 | X X X X X V V V V  
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X   X X   X X V
+6 | V   X X V   X X   V
+7 |   X X X X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V X V
+1 | X V X V X X X X X V
+2 | X V X V   X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X * X X X X
+6 |   X   X X V X X X X
+7 | X X X V X   X X X X
+8 | X V X X X   X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X V X X X X X V V V
+1 | X V X X X X X X X X
+2 | X X X X X V V V V  
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X X X X   X X V
+6 | V   X X V   X X   V
+7 |   X X X X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V X V
+1 | X V X V X X X X X V
+2 | X V X V X X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X * X X X X
+6 |   X   X X V X X X X
+7 | X X X V X   X X X X
+8 | X V X X X   X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X V X X X X X V V V
+1 | X V X X X X X X X X
+2 | X X X X X V V V V  
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X X X X   X X V
+6 | V X X X V   X X   V
+7 |   X X X X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V X V
+1 | X V X V X X X X X V
+2 | X V X V X X X X   V
+3 | X X X X   X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X * X X X X
+6 | X X   X X V X X X X
+7 | X X X V X   X X X X
+8 | X V X X X   X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+The computer's battleship has been drowned.
+0/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X V X X X X X V V V
+1 | X V X X X X X X X X
+2 | X X X X X V V V V  
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X X X X   X X V
+6 | V X X X V V X X   V
+7 |   X X X X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V X V
+1 | X V X V X X X X X V
+2 | X V X V X X X X   V
+3 | X X X X X X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X * X X X X
+6 | X X   X X V X X X X
+7 | X X X V X   X X X X
+8 | X V X X X   X X X  
+9 | X X   X X X V V V X
+
+It's your turn!
+Enter location for attack:
+Your battleship has been drowned.
+-1/10 battleships remain!
+Your following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X V X X X X X V V V
+1 | X V X X X X X X X X
+2 | X X X X X V V V V X
+3 |   X X V   X X   X  
+4 | X X X X X X X X   X
+5 | X X X X X X   X X V
+6 | V X X X V V X X   V
+7 |   X X X X X X X X X
+8 | V X X V X X V X V X
+9 | X X X X X X X X X X
+
+The computer's following table:
+    0 1 2 3 4 5 6 7 8 9
+    - - - - - - - - - -
+0 | X X X X X X V V X V
+1 | X V X V X X X X X V
+2 | X V X V X X X X   V
+3 | X X X X X X X X X V
+4 |   X   X X V X V X X
+5 | X X V X X V X X X X
+6 | X X   X X V X X X X
+7 | X X X V X   X X X X
+8 | X V X X X   X X X  
+9 | X X   X X X V V V X
+
