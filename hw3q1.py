@@ -102,11 +102,11 @@ def vertical_surroundings_validation(board, x, y, size):
         return False
     if x == 0:
         if y == 0 and y + size + 1 <= N:
-            return check_rectangle(board, x, y, x+1, y + size+1)
+            return check_rectangle(board, x, y, x+1, y + size)
         elif y > 0 and y + size == N:
             return check_rectangle(board, x, y-1, x+1, y + size)
         elif y > 0 and y + size + 1 <= N:
-            return check_rectangle(board, x, y-1, x+1, y + size+1)
+            return check_rectangle(board, x, y-1, x+1, y + size)
     else:
         if y == 0 and y + size + 1 <= N:
             return check_rectangle(board, x-1, y, x+1, y + size)
@@ -122,18 +122,18 @@ def horizontal_surroundings_validation(board, x, y, size):
         return False
     if y == 0:
         if x == 0 and x + size + 1 <= N:
-            return check_rectangle(board, x, y, x+size+1, y+1)
+            return check_rectangle(board, x, y, x+size, y+1)
         elif x > 0 and x + size == N:
             return check_rectangle(board, x-1, y, x+size, y+1)
         elif x > 0 and x + size + 1 <= N:
-            return check_rectangle(board, x-1, y, x+size+1, y+1)
+            return check_rectangle(board, x-1, y, x+size, y+1)
     else:
         if x == 0 and x + size + 1 <= N:
-            return check_rectangle(board, x, y-1, x+size+1, y+1)
+            return check_rectangle(board, x, y-1, x+size, y+1)
         elif x > 0 and x + size == N:
             return check_rectangle(board, x-1, y-1, x+size, y+1)
         elif x > 0 and x + size + 1 <= N:
-            return check_rectangle(board, x-1, y-1, x+size+1, y+1)
+            return check_rectangle(board, x-1, y-1, x+size, y+1)
     return False
 
 
@@ -254,20 +254,41 @@ def computer_attack_generator(board):
     return [x, y]
 
 
+def surrounders(brd, i, j):
+    for m in range(max(i - 1, 0), min(i + 2, N)):  # row
+        for n in range(max(j - 1, 0), min(j + 2, N)):  # col
+            if brd[m][n] == SHIP_MARK:
+                return False
+    return True
+
+
+def recursion_checker():
+
+
+
 def drw(brd, y, x, rec=False):
+    tmp = True
     if rec:
+        sur = True
         for i in range(max(y-1, 0), min(y+2, N)):  #row
             for j in range(max(x-1, 0), min(x + 2, N)): #col
                 if brd[i][j] == SHIP_MARK:
                     return False
+                if brd[i][j] == HIT_MARK and (j != x or i != y):
+                    if not surrounders(brd, i, j):
+                        return False
+                    # sur = surrounders(brd, i, j)
+                    # if not sur:
+                    #     return False
         return True
-    tmp = True
     for i in range(max(y-1, 0), min(y+2, N)):  #y
         for j in range(max(x-1, 0), min(x + 2, N)): #x
             if brd[i][j] == SHIP_MARK:
                 return False
             if brd[i][j] == HIT_MARK and (j != x or i != y):
                 tmp = drw(brd, i, j, True)
+                if not tmp:
+                    return False
     return True and tmp
 
 def first_part():
