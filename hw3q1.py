@@ -140,14 +140,14 @@ def horizontal_surroundings_validation(board, x, y, size):
 def check_rectangle(board, x1, y1, x2, y2):
     for i in range(x1, min(x2+1, N)):
         for j in range(y1, min(y2+1, N)):
-            if board[j][i] != ' ':
+            if board[j][i] != EMPTY:
                 return False
     return True
 
 
 def place_vertical_ship(board, x, y, size, is_last, user):
     for index in range(y, y + size):
-        board[index][x] = '*'
+        board[index][x] = SHIP_MARK
     if (not is_last) and user == USER:
         print('Your current board:')
         print_board(board, user)
@@ -156,7 +156,7 @@ def place_vertical_ship(board, x, y, size, is_last, user):
 
 def place_side_ship(board, x, y, size, is_last, user):
     for index in range(x, x + size):
-        board[y][index] = '*'
+        board[y][index] = SHIP_MARK
     if (not is_last) and user == USER:
         print('Your current board:')
         print_board(board, user)
@@ -262,25 +262,22 @@ def surrounders(brd, i, j):
     return True
 
 
-def recursion_checker():
-
+def recursion_checker(brd, y, x):
+    sur = True
+    for i in range(max(y - 1, 0), min(y + 2, N)):  # row
+        for j in range(max(x - 1, 0), min(x + 2, N)):  # col
+            if brd[i][j] == SHIP_MARK:
+                return False
+            if brd[i][j] == HIT_MARK and (j != x or i != y):
+                if not surrounders(brd, i, j):
+                    return False
+    return True
 
 
 def drw(brd, y, x, rec=False):
     tmp = True
     if rec:
-        sur = True
-        for i in range(max(y-1, 0), min(y+2, N)):  #row
-            for j in range(max(x-1, 0), min(x + 2, N)): #col
-                if brd[i][j] == SHIP_MARK:
-                    return False
-                if brd[i][j] == HIT_MARK and (j != x or i != y):
-                    if not surrounders(brd, i, j):
-                        return False
-                    # sur = surrounders(brd, i, j)
-                    # if not sur:
-                    #     return False
-        return True
+        return recursion_checker(brd, y, x)
     for i in range(max(y-1, 0), min(y+2, N)):  #y
         for j in range(max(x-1, 0), min(x + 2, N)): #x
             if brd[i][j] == SHIP_MARK:
