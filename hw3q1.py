@@ -175,7 +175,7 @@ def coordinates_retry(board, size, is_last):
 
 
 def game_manager(boards, user_b, comp_b, user_drw, comp_drw):
-    while not user_drw == N or comp_drw == N:
+    while not (user_drw == N or comp_drw == N):
         [comp_b, user_drw, u_succ] = user_turn(boards[1], user_drw, False)
         [user_b, comp_drw, c_succ] = comp_turn(boards[0], comp_drw, False)
         if u_succ:
@@ -184,24 +184,53 @@ def game_manager(boards, user_b, comp_b, user_drw, comp_drw):
         if c_succ:
             print("Your battleship has been drowned.")
             print('{}/10 battleships remain!'.format(N - comp_drw))
+        if user_drw == N or comp_drw == N:
+            return [user_drw == N, comp_drw == N]
         print('Your following table:')
         print_board(comp_b, COMPUTER)
         print("The computer's following table:")
         print_board(user_b, USER)
-        # game_manager(boards, user_b, comp_b, user_drw, comp_drw)
+
+
+def is_digit(x1, x2):
+    try:
+        int(x1)
+        int(x2)
+        return True
+    except:
+        return False
+
+def address_getter():
+    adress = EMPTY
+    while adress == EMPTY:
+        try:
+            adress = input()
+        except EOFError:
+            print("EOFError")
+            break
+    adress = adress.split(',')
+    if is_digit(adress[0], adress[1]):
+        x1 = int(adress[1])
+        x2 = int(adress[0])
+        while x1 < 0 or x2 > N or x2 < 0 or x2 > N:
+            print("Error: Invalid attack...\nPlease try again:")
+            return address_getter()
+        return [x1, x2]
 
 
 def user_turn(target_b, drowned, succeed):
     print("It's your turn!")
     print('Enter location for attack:')
-    loc = str(input())[::-1].split(',')
-    if SHIP_MARK in target_b[int(loc[0])][int(loc[1])]:
-        target_b[int(loc[0])][int(loc[1])] = HIT_MARK
-        if drw(target_b, int(loc[0]), int(loc[1])):
+    address = address_getter()
+    x1 = address[0]
+    x2 = address[1]
+    if SHIP_MARK in target_b[x1][x2]:
+        target_b[x1][x2] = HIT_MARK
+        if drw(target_b, x1, x2):
             drowned += 1
             succeed = True
     else:
-        target_b[int(loc[0])][int(loc[1])] = MISS_MARK
+        target_b[x1][x2] = MISS_MARK
     return [target_b, drowned, succeed]
 
 
@@ -264,7 +293,11 @@ def main():
     boards = first_part()
     user_play_board = board_generator()
     comp_play_board = board_generator()
-    game_manager(boards, user_play_board, comp_play_board, 0, 0)
+    results = game_manager(boards, user_play_board, comp_play_board, 0, 0)
+    if results[0]:
+        print("Congrats! You are the winner :)")
+    else:
+        print("Game over! The computer won the fight :(")
 
 
 if __name__ == '__main__':
