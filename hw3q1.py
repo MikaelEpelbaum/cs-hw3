@@ -24,10 +24,9 @@ def initialize_and_set_board(player):
     board = board_generator()
     if player == USER:
         print_board(board, player)
-    sizes = len(SHIPS)
-    for size in range(1, sizes):
+    for size in range(1, len(SHIPS)):
         for i in range(0, SHIPS[size]):
-            if not (size + 1 == sizes and i + 1 == SHIPS[-1]):
+            if not (size + 1 == len(SHIPS) and i + 1 == SHIPS[-1]):
                 if player == USER:
                     board = set_user_board(board, size, False)
                 else:
@@ -44,14 +43,16 @@ def initialize_and_set_board(player):
 
 def set_user_board(board, size, is_last):
     print('Enter location for Battleship of size {}:'.format(size))
-    loc = str(input()).split(',')
-    x = int(loc[0])
-    y = int(loc[1][:-2])
-    side = str(loc[1][-1])
-    # if its the last ship to place
-    if is_last:
-        return validate_and_place(board, x, y, side, size, True, USER)
-    return validate_and_place(board, x, y, side, size, False, USER)
+    try:
+        loc = str(input()).split(',')
+        x = int(loc[0])
+        y = int(loc[1][:-2])
+        side = str(loc[1][-1])
+        if is_last:
+            return validate_and_place(board, x, y, side, size, True, USER)
+        return validate_and_place(board, x, y, side, size, False, USER)
+    except:
+        set_user_board(board, size, is_last)
 
 
 def set_machine_board(board, size, is_last):
@@ -86,7 +87,6 @@ def validate_and_place(board, x, y, side, size, is_last, user):
                 return coordinates_retry(board, size, is_last)
             else:
                 return set_machine_board(board, size, is_last)
-
     else:
         if horizontal_surroundings_validation(board, x, y, size):
             return place_side_ship(board, x, y, size, is_last, user)
@@ -219,8 +219,7 @@ def address_getter():
 
 
 def user_turn(target_b, drowned, succeed):
-    print("It's your turn!")
-    print('Enter location for attack:')
+    print("It's your turn!\nEnter location for attack:")
     address = address_getter()
     x1 = address[0]
     x2 = address[1]
@@ -262,7 +261,6 @@ def drw(brd, y, x, rec=False):
                 if brd[i][j] == SHIP_MARK:
                     return False
         return True
-
     tmp = True
     for i in range(max(y-1, 0), min(y+2, N)):  #y
         for j in range(max(x-1, 0), min(x + 2, N)): #x
@@ -288,7 +286,6 @@ def main():
     print('Please enter seed:')
     seed = int(input())
     random.seed(seed)
-
     # boards initialisation
     boards = first_part()
     user_play_board = board_generator()
